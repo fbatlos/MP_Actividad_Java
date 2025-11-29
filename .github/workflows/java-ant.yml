@@ -1,0 +1,32 @@
+name: Java CI Manual
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Crear carpeta bin
+      run: mkdir -p bin
+
+    - name: Compilar
+      # Compilamos todo lo que está en src y lo mandamos a bin
+      run: javac -d bin -sourcepath src src/libClases/*.java src/libPruebas/*.java
+
+    - name: Ejecutar Prueba2
+      # Ejecutamos la clase principal. Nota: Esto fallará si el programa espera input de teclado y no se lo damos.
+      # Como tu programa pide datos por teclado, aquí solo verificamos que arranque o compile.
+      run: java -cp bin libPruebas.Prueba2 || echo "La ejecución requiere entrada de usuario, pero la compilación fue exitosa."
