@@ -132,7 +132,7 @@ public class Fecha implements Proceso,Cloneable{
 		    System.out.println("Fecha no valida"); 
 		   } 
 		  } while(!valida); 
-		  sc.close(); 
+		  //sc.close(); 
 		  return fecha; 
 	} 
 	

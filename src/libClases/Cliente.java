@@ -112,5 +112,9 @@ public class Cliente implements Proceso,Cloneable {
 	public String getNif() {
 		return nif;
 	}
+	
+	public int getCodCliente() {
+		return codCliente;
+	}
   
 } 
