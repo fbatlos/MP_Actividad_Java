@@ -26,7 +26,7 @@ jobs:
       # Compilamos todo lo que está en src y lo mandamos a bin
       run: javac -d bin -sourcepath src src/libClases/*.java src/libPruebas/*.java
 
-    - name: Ejecutar Prueba
+    - name: Ejecutar Prueba2
       # Ejecutamos la clase principal. Nota: Esto fallará si el programa espera input de teclado y no se lo damos.
       # Como tu programa pide datos por teclado, aquí solo verificamos que arranque o compile.
-      run: java -cp bin libPruebas.Prueba || echo "La ejecución requiere entrada de usuario, pero la compilación fue exitosa."
+      run: java -cp bin libPruebas.Prueba2 || echo "La ejecución requiere entrada de usuario, pero la compilación fue exitosa."
